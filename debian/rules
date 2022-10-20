@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=zc.lockfile
+
+export PYBUILD_AFTER_INSTALL = cd {destdir}{install_dir}/zc/lockfile && \
+	rm README.txt tests.py
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild

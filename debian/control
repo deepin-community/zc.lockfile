@@ -1,0 +1,29 @@
+Source: zc.lockfile
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Julien Muchembled <jm@jmuchemb.eu>
+Build-Depends: debhelper-compat (= 12),
+               dh-python,
+               python3-setuptools,
+               python3-all,
+Build-Depends-Indep:
+               python3-zope.testing,
+Standards-Version: 4.4.1
+Testsuite: autopkgtest-pkg-python
+Homepage: https://pypi.org/project/zc.lockfile/
+Vcs-Git: https://salsa.debian.org/python-team/modules/zc-lockfile.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/zc-lockfile
+Rules-Requires-Root: no
+
+Package: python3-zc.lockfile
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: Basic inter-process locks for Python 3
+ The zc.lockfile package provides a basic portable implementation of
+ interprocess locks using lock files. The purpose if not specifically to lock
+ files, but to simply provide locks with an implementation based on
+ file-locking primitives.  Of course, these locks could be used to mediate
+ access to *other* files. For example, the ZODB file storage implementation
+ uses file locks to mediate access to file-storage database files. The database
+ files and lock file files are separate files.
